@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<!-- JS SCRIPT -->
+	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+
+	<!-- EXTERNAL CSS FILE -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- EXTERNAL BOOTSTRAP FILE -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Arvo|Raleway" rel="stylesheet">
+
+</head>
+<body>
+
+		<div class="wrapper">
+            <header>
+                  <nav>
+                        <div class="menu-icon">
+                              <i class="fa fa-bars fa-2x"></i>
+                        </div>
+                        <div class="logo">
+                              In their shoes 
+                        </div>
+                        <div class="menu">
+                              <ul>
+                                    <li><a href="index.html">Thriller</a></li>
+                              </ul>
+                        </div>
+                  </nav>
+            </header>
+      	</div>
+<!-- NAVIGATION -->
+
+<div id="section_1"> <!-- FILL IN FORM -->
+<h3>Fill in this form</h3>
+<hr>
+
+<form>
+  	<div align="center">
+  		<center>
+  			<table>
+		    <tr>
+		      <td ALIGN="RIGHT">First Name :</td>
+		      <td><input TYPE="text" id="firstName" SIZE="15"></td>
+		      <td></td>
+		      <td ALIGN="RIGHT">Last  Name :</td>
+		      <td><input TYPE="text" id="lastName" SIZE="15"></td>
+		    </tr>
+
+		    <tr>
+		      <td ALIGN="RIGHT">Sharp Object :</td>
+		      <td><input TYPE="text" id="sharp" SIZE="15"></td>
+		      <td></td>
+		      <td ALIGN="RIGHT">Place where you rest :</td>
+		      <td><input TYPE="text" id="rest" SIZE="15"></td>
+		    </tr>
+
+		    <tr>
+		      <td ALIGN="RIGHT">Boy or Girl :</td>
+		      <td><input TYPE="text" id="gender" SIZE="15"></td>
+		      <td></td>
+		      <td ALIGN="RIGHT">Friend's Name : </td>
+		      <td><input TYPE="text" id="friendName" SIZE="15"></td>
+		    </tr>
+  			</table>
+  		</center>
+	</div>
+
+<br>
+
+ 	 <div align="center">
+  		<center>
+  			<p>
+  				<input class="btn" TYPE="button" VALUE="Write Story"
+  				ONCLICK="compute(this.form)">
+  				<input class="btn" TYPE="button" VALUE="Erase Story"
+  				ONCLICK="ClearForm(this.form)">
+  				<input class="btn" TYPE="button" VALUE="Erase Data"
+  				ONCLICK="ClearData(this.form)">
+  			</p>
+  		</center>
+  	</div>
+
+  	<div align="center">
+	  	<center>
+  			<p>
+  				<br>
+  				<input TYPE="text" NAME="title" SIZE="64"> 
+  				<br>
+  				<br>
+  				<textarea COLS="120" ROWS="50" name="story" wrap="virtual"></textarea> 
+			</p>
+  		</center>
+	</div>
+</form>
+</div> <!-- FILL IN FORM -->
+
+
+<script type="text/javascript">
+
+	// NAVIGATION BAR
+	 // Menu-toggle button
+      $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+      // Scrolling Effect
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+            else {
+                  $('nav').removeClass('black');
+            }
+      })
+
+      
+    function jumpBox(list) {
+   	location.href = list.options[list.selectedIndex].value
+   	}
+
+	function compute(form)  {
+	form.title.value = ("A short story by " + form.firstName.value + " " + form.lastName.value);
+
+
+	if(form.gender.value == "Boy" || form.gender.value == "boy") {var boyGirl = "boy"} else {var boyGirl = "girl"};
+    if(form.gender.value == "Boy" || form.gender.value == "boy") {var heShe = "he"} else {var heShe = "she"};
+    if(form.gender.value == "Boy" || form.gender.value == "boy") {var hisHer = "his"} else {var hisHer = "her"};
+    if(form.gender.value == "Boy" || form.gender.value == "boy") {var himHer = "him"} else {var himHer = "her"};
+
+
+		form.story.value = ("\n" + "\n" +
+							form.firstName.value + ": Hey, can I tell you something?" + "\n" +
+							form.friendName.value + ": Yes?" + "\n" +
+							form.firstName.value + ": promise you won't judge me " + "\n" +
+							form.friendName.value + ": uhh, ok. I promise" + "\n" +
+							form.firstName.value + ": Fine. I feel like someone is coming in my " + form.rest.value + " and watching me as I sleep" + "\n" +
+							form.friendName.value + ": How can you say that?" + "\n" +
+							form.firstName.value + ": Every night I hear my door closing but I was too afraid to open my eyes to see what it is." + "\n" +
+							form.friendName.value + ": Maybe its the cleaning crew?" + "\n" + 
+							form.firstName.value + ": They wouldn't come in without permission! And its night to clean my " + form.rest.value + "\n" + 
+							form.friendName.value + ": You sure you're not making this up?" + "\n" +
+							form.firstName.value + ": ITS TRUE! Don't you believe me!?" + "\n" +
+							form.friendName.value + ": I believe you. It's just...  It's hard to swallow it in." + "\n" +
+							form.firstName.value + ": I understand why you think that. But please help me." + "\n" +
+							form.friendName.value + ": Uh, okay. I'll help you." + "\n" +
+							form.firstName.value + ": YOU ARE THE BEST, what do i do?" + "\n" + 
+							form.friendName.value + ": We have school in 8 minutes, go to my dorm and take my camera." + "\n" +
+							form.firstName.value + ": And?" + "\n" +
+							form.friendName.value + ": Video your dorm secretly while were in school until the time you go to bed, then watch the video when you wake up." + "\n" +
+							form.firstName.value + ": Your camera's memory can tape that long!?" + "\n" +
+							form.friendName.value + ": I havent used it so, yeah." + "\n" +
+							form.firstName.value + ": Okay I'm on my way to your dorm now, just open the door for me." + "\n" +
+							form.friendName.value + ": I'll just wait for you outside" + "\n" + "\n" +
+
+							"After class, " + form.firstName.value + "set up the camera beside the bed before going to sleep and called " + form.friendName.value + "." + "\n" + "\n" +
+
+
+							form.firstName.value + ": Okay it's now or never...I just have to sleep and watch it tomorrow, right?" + "\n" + 
+							form.friendName.value + ": Yup." + "\n" +
+							form.firstName.value + ": Well then... Good night." + "\n" +
+							form.friendName.value + ": G'night." + "\n" + "\n" +
+
+							"The next day, " + form.firstName.value + " took the camera from the stand and called " + form.friendName.value + " while connecting it to the computer" + "\n" + "\n" +
+							form.firstName.value + ": Okay, I'm awake." + "\n" +
+							form.friendName.value + ":Ready to watch the video?" + "\n" +
+							form.firstName.value + ": Maybe." + "\n" +
+							form.friendName.value + ": You'll be alright." + "\n" +
+							form.firstName.value + ": Fine. I'm pluggin in the camera in my laptop now. Give me a sec." +
+							form.firstName.value + ": Here we go." + "\n" +
+							form.friendName.value + ": Hit play." + "\n" +
+							form.firstName.value + ": Don't rush me!" + "\n" +
+							form.friendName.value + ": Sorry." + "\n" + 
+							form.firstName.value + ": Okay...So the time we were in school, nothing is happening." + "\n" +
+							form.friendName.value + ": Oh..." + "\n" + 
+							form.firstName.value + ": Oh wait! The door is opening." + "\n" +
+							form.friendName.value + ": Who is it?" + "\n" +
+							form.friendName.value + ": Oh wait it's me." + "\n" +
+							form.friendName.value + ": So the time were in school. Everything is A-OK." + "\n" +
+							form.firstName.value + ": Looks like it." + "\n" +
+							form.firstName.value + ": And now I'm going to sleep..." + "\n" +
+							form.firstName.value + ": I'm fast forwarding it." + "\n" +
+							form.friendName.value + ": Okay" + "\n" +
+							form.firstName.value + ": The door opened. Someone entered my room." + "\n" +
+							form.friendName.value + ": WHO?" + "\n" + 
+							form.firstName.value + "	" + ": It's a " + form.gender.value + "!" + heShe + "'s' holding a... wait." + "\n" +
+							form.firstName.value + ": Is that a " + form.sharp.value + "?" + "\n" +
+							form.friendName.value + ": Oh god..." + "\n" +
+							form.firstName.value + ": " + heShe + "'s staring at me..." + "\n" +
+							form.firstName.value + ": Let me fast forward this." + "\n" + 
+							form.friendName.value + ": I'm getting the goosebumps. I don't like the sound of that." + "\n" +
+							form.firstName.value + ": she stared at me for 3 hours straight..." + "\n" + 
+							form.firstName.value + ": Wait " + heShe + "'s moving." + "\n" +
+							form.friendName.value + ": I'm scared now." + "\n" +
+							form.firstName.value + ": Same." + "\n" +
+							form.firstName.value + ": She's opening my closet. She entered it?!" + "\n" +
+							form.friendName.value + ": Whoa... Does she look familiar?" + "\n" +
+							form.firstName.value + ": I... I can't see her face so... No." + "\n" +
+							form.firstName.value + ": And now I woke up and here's the clip I'm taking off the camera." + "\n" +
+							form.firstName.value + ": Oh dang I have a pimple." + "\n" + 
+							form.friendName.value + ": Dude..." + "\n" +
+							form.firstName.value + ": Yeah?" + "\n" +
+							form.friendName.value + "..." + "\n" +
+							form.firstName.value + ": What is it?" + "\n" + 
+							form.friendName.value + ": Is she still in the closet?" + "\n" + 
+							form.firstName.value + ": ..." + "\n" +
+							form.friendName.value + ": Is she still in the closet?!" + "\n" +
+							form.friendName.value + ": Dude?" + "\n" +
+							form.friendName.value + ": You still there?!" + "\n" +
+							form.friendName.value + ": I'm calling the police!" + "\n" +
+							form.friendName.value + ": Please be there!" + "\n" +
+							"..." + "\n" +
+							"...: I was in the closet." + "\n" +
+							"...: Good guess." + "\n" +
+							form.friendName.value + ": Where's " + form.firstName.value + "?!" + "\n" +
+							"...: Taking a nice cold red bath." + "\n" +
+							form.friendName.value + ": Oh god no..." + "\n" +
+							"...: Leave your door open for me." + "\n" +
+							"...: Take a video too." + "\n" +
+							"...: So the fun will be..." + "\n" +
+							"Thrilling." + "\n" + "\n" +
+
+							"Ends call."
+
+			);
+		}
+
+
+function ClearForm(form)  {
+   form.story.value = "";
+   form.title.value = "";
+   }
+
+function ClearData(form) {
+   form.firstName.value = "";
+   form.lastName.value = "";
+   form.friendName.value = "";
+   form.sharp.value = "";
+   form.rest.value = "";
+   form.gender.value = "";
+   }
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
